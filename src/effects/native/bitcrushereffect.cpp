@@ -42,7 +42,7 @@ EffectManifest BitCrusherEffect::getManifest() {
     frequency->setControlHint(EffectManifestParameter::CONTROL_KNOB_LOGARITHMIC);
     frequency->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     frequency->setUnitsHint(EffectManifestParameter::UNITS_SAMPLERATE);
-    frequency->setDefaultLinkType(EffectManifestParameter::LINK_LINKED);
+    frequency->setDefaultLinkType(EffectManifestParameter::LINK_LINKED_LEFT_RIGHT);
     frequency->setNeutralPointOnScale(1.0);
     frequency->setDefault(1.0);
     frequency->setMinimum(0.02);

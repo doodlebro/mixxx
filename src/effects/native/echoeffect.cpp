@@ -31,7 +31,7 @@ EffectManifest EchoEffect::getManifest() {
     time->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     time->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
     time->setMinimum(0.0);
-    time->setDefault(1.0);
+    time->setDefault(0.7);
     time->setMaximum(1.0);
 
     time = manifest.addParameter();

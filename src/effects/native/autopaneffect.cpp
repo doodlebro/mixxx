@@ -26,18 +26,6 @@ EffectManifest AutoPanEffect::getManifest() {
             "A delay, inversed on each side, is added to increase the "
             "spatial move and the period can be synced with the BPM."));
 
-    // Width : applied on the channel with gain reducing.
-    EffectManifestParameter* width = manifest.addParameter();
-    width->setId("width");
-    width->setName(QObject::tr("Width"));
-    width->setDescription("How far the signal goes on the left or on the right");
-    width->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
-    width->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
-    width->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
-    width->setMinimum(0.0);
-    width->setMaximum(1.0);    // 0.02 * sampleRate => 20ms
-    width->setDefault(0.5);
-
     // Period unit
     EffectManifestParameter* periodUnit = manifest.addParameter();
     periodUnit->setId("periodUnit");
@@ -46,7 +34,7 @@ EffectManifest AutoPanEffect::getManifest() {
     periodUnit->setControlHint(EffectManifestParameter::CONTROL_TOGGLE_STEPPING);
     periodUnit->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     periodUnit->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
-    periodUnit->setDefault(0);
+    periodUnit->setDefault(1);
     periodUnit->setMinimum(0);
     periodUnit->setMaximum(1);
 
@@ -61,9 +49,10 @@ EffectManifest AutoPanEffect::getManifest() {
     period->setControlHint(EffectManifestParameter::CONTROL_KNOB_LOGARITHMIC);
     period->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     period->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
+    period->setDefaultLinkType(EffectManifestParameter::LINK_LINKED);
     period->setMinimum(0.0625);     // 1 / 16
     period->setMaximum(129.0);      // 128 + 1
-    period->setDefault(3.0);
+    period->setDefault(0.1250);
 
     // This parameter controls the easing of the sound from a side to another.
     EffectManifestParameter* smoothing = manifest.addParameter();
@@ -76,9 +65,22 @@ EffectManifest AutoPanEffect::getManifest() {
     smoothing->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
     smoothing->setMinimum(0.0);
     smoothing->setMaximum(0.5);  // there are two steps per period so max is half
-    smoothing->setDefault(0.25);
+    smoothing->setDefault(0.5);
     // TODO(Ferran Pujol): when KnobComposedMaskedRing branch is merged to master,
     //                     make the scaleStartParameter for this be 1.
+
+
+    // Width : applied on the channel with gain reducing.
+    EffectManifestParameter* width = manifest.addParameter();
+    width->setId("width");
+    width->setName(QObject::tr("Width"));
+    width->setDescription("How far the signal goes on the left or on the right");
+    width->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
+    width->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
+    width->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
+    width->setMinimum(0.0);
+    width->setMaximum(1.0);    // 0.02 * sampleRate => 20ms
+    width->setDefault(0.5);
 
     return manifest;
 }

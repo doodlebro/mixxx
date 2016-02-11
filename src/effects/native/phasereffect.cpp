@@ -29,7 +29,7 @@ EffectManifest PhaserEffect::getManifest() {
     stereo->setControlHint(EffectManifestParameter::CONTROL_TOGGLE_STEPPING);
     stereo->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     stereo->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
-    stereo->setDefault(0);
+    stereo->setDefault(1);
     stereo->setMinimum(0);
     stereo->setMaximum(1);
 
@@ -40,6 +40,7 @@ EffectManifest PhaserEffect::getManifest() {
     stages->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
     stages->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     stages->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
+    stages->setDefaultLinkType(EffectManifestParameter::LINK_LINKED_LEFT_RIGHT);
     stages->setDefault(1.0);
     stages->setMinimum(1.0);
     stages->setMaximum(6.0);
@@ -51,6 +52,7 @@ EffectManifest PhaserEffect::getManifest() {
     frequency->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
     frequency->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     frequency->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
+    frequency->setDefaultLinkType(EffectManifestParameter::LINK_LINKED);
     frequency->setDefault(0.5);
     frequency->setMinimum(0.0);
     frequency->setMaximum(5.0);
@@ -62,7 +64,7 @@ EffectManifest PhaserEffect::getManifest() {
     depth->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
     depth->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     depth->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
-    depth->setDefault(0.0);
+    depth->setDefault(0.75);
     depth->setMinimum(0.0);
     depth->setMaximum(1.0);
 
@@ -73,7 +75,7 @@ EffectManifest PhaserEffect::getManifest() {
     fb->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
     fb->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     fb->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
-    fb->setDefault(0.0);
+    fb->setDefault(0.3);
     fb->setMinimum(-0.95);
     fb->setMaximum(0.95);
 
@@ -84,6 +86,7 @@ EffectManifest PhaserEffect::getManifest() {
     range->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
     range->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     range->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
+    range->setDefaultLinkType(EffectManifestParameter::LINK_LINKED_LEFT_RIGHT);
     range->setDefault(0.5);
     range->setMinimum(0.05);
     range->setMaximum(0.95);

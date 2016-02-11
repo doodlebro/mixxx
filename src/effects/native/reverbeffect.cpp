@@ -31,6 +31,7 @@ EffectManifest ReverbEffect::getManifest() {
     time->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
     time->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     time->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
+    time->setDefaultLinkType(EffectManifestParameter::LINK_LINKED_LEFT_RIGHT);
     time->setMinimum(0.0005);
     time->setDefault(0.5);
     time->setMaximum(1.0);
@@ -43,6 +44,7 @@ EffectManifest ReverbEffect::getManifest() {
     damping->setControlHint(EffectManifestParameter::CONTROL_KNOB_LINEAR);
     damping->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     damping->setUnitsHint(EffectManifestParameter::UNITS_UNKNOWN);
+    damping->setDefaultLinkType(EffectManifestParameter::LINK_LINKED);
     damping->setMinimum(0.005);
     damping->setDefault(0.5);
     damping->setMaximum(1.0);

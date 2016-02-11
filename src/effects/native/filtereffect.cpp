@@ -42,7 +42,7 @@ EffectManifest FilterEffect::getManifest() {
     q->setControlHint(EffectManifestParameter::CONTROL_KNOB_LOGARITHMIC);
     q->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     q->setUnitsHint(EffectManifestParameter::UNITS_SAMPLERATE);
-    q->setDefault(0.707106781); // 0.707106781 = Butterworth
+    q->setDefault(2.8); // 0.707106781 = Butterworth
     q->setMinimum(0.4);
     q->setMaximum(4.0);
 

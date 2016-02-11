@@ -2,7 +2,7 @@
 #include "util/math.h"
 
 
-static const double kMinCorner = 0.0003; // 13 Hz @ 44100
+static const double kMinCorner = 0.0021; // 13 Hz @ 44100
 static const double kMaxCorner = 0.5; // 22050 Hz @ 44100
 static const unsigned int kStartupSamplerate = 44100;
 
@@ -43,7 +43,7 @@ EffectManifest MoogLadder4FilterEffect::getManifest() {
     q->setControlHint(EffectManifestParameter::CONTROL_KNOB_LOGARITHMIC);
     q->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     q->setUnitsHint(EffectManifestParameter::UNITS_SAMPLERATE);
-    q->setDefault(0);
+    q->setDefault(3.2);
     q->setMinimum(0.0);
     q->setMaximum(4.0);
 
