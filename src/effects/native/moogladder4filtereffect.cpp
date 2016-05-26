@@ -43,7 +43,7 @@ EffectManifest MoogLadder4FilterEffect::getManifest() {
     q->setControlHint(EffectManifestParameter::CONTROL_KNOB_LOGARITHMIC);
     q->setSemanticHint(EffectManifestParameter::SEMANTIC_UNKNOWN);
     q->setUnitsHint(EffectManifestParameter::UNITS_SAMPLERATE);
-    q->setDefault(3.2);
+    q->setDefault(3.05);
     q->setMinimum(0.0);
     q->setMaximum(4.0);
 
